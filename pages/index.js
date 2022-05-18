@@ -1,7 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import Banner from "../components/Banner";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -11,6 +12,12 @@ export default function Home() {
       </Head>
 
       <h1>Netflix</h1>
+
+      {/* <Navbar /> */}
+      <Banner />
+      {/* <Card /> */}
     </div>
   );
-}
+};
+
+export default Home;
