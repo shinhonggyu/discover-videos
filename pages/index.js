@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Banner from "../components/Banner";
+import Banner from "../components/banner/banner";
+import Navbar from "../components/navbar/navbar";
 
 const Home = () => {
   return (
@@ -11,10 +12,12 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Netflix</h1>
-
-      {/* <Navbar /> */}
-      <Banner />
+      <Navbar username="honggyu@gmail.com" />
+      <Banner
+        title="Clifford the Big Red Dog"
+        subTitle="a very cute dog"
+        imgUrl="/static/clifford.webp"
+      />
       {/* <Card /> */}
     </div>
   );
