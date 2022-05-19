@@ -3,7 +3,10 @@ import { useState } from "react";
 import Image from "next/image";
 
 const Card = (props) => {
-  const { imgUrl = "/static/cliffor.webp", size = "medium" } = props;
+  const {
+    imgUrl = "https://images.unsplash.com/photo-1485846234645-a62644f84728?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW92aWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500",
+    size = "medium",
+  } = props;
 
   const [imgSrc, setImgSrc] = useState(imgUrl);
 
@@ -14,8 +17,9 @@ const Card = (props) => {
   };
 
   const handleOnError = () => {
-    console.log("handleOnError");
-    setImgSrc("/static/clifford.webp");
+    setImgSrc(
+      "https://images.unsplash.com/photo-1485846234645-a62644f84728?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW92aWV8ZW58MHx8MHx8&auto=format&fit=crop&w=500"
+    );
   };
 
   return (
