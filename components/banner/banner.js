@@ -3,7 +3,6 @@ import Image from "next/image";
 
 const Banner = (props) => {
   const { title, subTitle, imgUrl } = props;
-
   const handleOnPlay = () => {
     console.log("handleOnPlay");
   };
