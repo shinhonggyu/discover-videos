@@ -3,20 +3,10 @@ import styles from "../styles/Home.module.css";
 import Banner from "../components/banner/banner";
 import Navbar from "../components/navbar/navbar";
 import SectionCards from "../components/card/section-cards";
-
-const disneyVideos = [
-  {
-    imgUrl: "/static/clifford.webp",
-  },
-  {
-    imgUrl: "/static/clifford.webp",
-  },
-  {
-    imgUrl: "/static/clifford.webp",
-  },
-];
+import { getVideos } from "../lib/videos";
 
 const Home = () => {
+  const disneyVideos = getVideos();
   return (
     <div className={styles.container}>
       <Head>
