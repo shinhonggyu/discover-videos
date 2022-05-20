@@ -4,6 +4,18 @@ import Banner from "../components/banner/banner";
 import Navbar from "../components/navbar/navbar";
 import SectionCards from "../components/card/section-cards";
 
+const disneyVideos = [
+  {
+    imgUrl: "/static/clifford.webp",
+  },
+  {
+    imgUrl: "/static/clifford.webp",
+  },
+  {
+    imgUrl: "/static/clifford.webp",
+  },
+];
+
 const Home = () => {
   return (
     <div className={styles.container}>
@@ -21,7 +33,8 @@ const Home = () => {
       />
 
       <div className={styles.sectionWrapper}>
-        <SectionCards title="Disney" />
+        <SectionCards title="Disney" videos={disneyVideos} size="large" />
+        <SectionCards title="Product" videos={disneyVideos} size="medium" />
       </div>
     </div>
   );
