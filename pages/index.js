@@ -2,7 +2,6 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Banner from "../components/banner/banner";
 import Navbar from "../components/navbar/navbar";
-import Card from "../components/card/card";
 import SectionCards from "../components/card/section-cards";
 
 const Home = () => {
@@ -22,9 +21,6 @@ const Home = () => {
       />
 
       <SectionCards title="Disney" />
-
-      <Card size="medium" />
-      <Card imgUrl="/static/clifford.webp" size="small" />
     </div>
   );
 };
