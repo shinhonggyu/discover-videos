@@ -6,15 +6,20 @@ import SectionCards from "../components/card/section-cards";
 import { getVideos } from "../lib/videos";
 
 export async function getServerSideProps(context) {
-  const disneyVideos = await getVideos();
+  const disneyVideos = await getVideos("disney trailer");
+  const productivityVideos = await getVideos("productivity");
+  const travelVideos = await getVideos("travel");
+  // const popularVideos = await getVideos("disney trailer");
   return {
     props: {
       disneyVideos,
+      productivityVideos,
+      travelVideos,
     },
   };
 }
 
-const Home = ({ disneyVideos }) => {
+const Home = ({ disneyVideos, productivityVideos, travelVideos }) => {
   console.log({ disneyVideos });
   return (
     <div className={styles.container}>
@@ -33,7 +38,13 @@ const Home = ({ disneyVideos }) => {
 
       <div className={styles.sectionWrapper}>
         <SectionCards title="Disney" videos={disneyVideos} size="large" />
-        <SectionCards title="Product" videos={disneyVideos} size="medium" />
+        <SectionCards title="Travel" videos={travelVideos} size="small" />
+        <SectionCards
+          title="Productivity"
+          videos={productivityVideos}
+          size="medium"
+        />
+        <SectionCards title="Popular" videos={disneyVideos} size="small" />
       </div>
     </div>
   );
