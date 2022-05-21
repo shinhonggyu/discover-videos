@@ -20,7 +20,6 @@ export async function getServerSideProps(context) {
 }
 
 const Home = ({ disneyVideos, productivityVideos, travelVideos }) => {
-  console.log({ disneyVideos });
   return (
     <div className={styles.container}>
       <Head>
