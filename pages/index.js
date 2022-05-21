@@ -5,8 +5,17 @@ import Navbar from "../components/navbar/navbar";
 import SectionCards from "../components/card/section-cards";
 import { getVideos } from "../lib/videos";
 
-const Home = () => {
+export async function getServerSideProps(context) {
   const disneyVideos = getVideos();
+  return {
+    props: {
+      disneyVideos,
+    },
+  };
+}
+
+const Home = ({ disneyVideos }) => {
+  console.log({ disneyVideos });
   return (
     <div className={styles.container}>
       <Head>
