@@ -38,7 +38,7 @@ const Home = ({
       </Head>
 
       <div className={styles.main}>
-        <Navbar username="honggyu@gmail.com" />
+        <Navbar username="zowoz8819@gmail.com" />
         <Banner
           title="Clifford the Big Red Dog"
           subTitle="a very cute dog"
