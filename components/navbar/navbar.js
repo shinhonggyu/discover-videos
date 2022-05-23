@@ -15,11 +15,13 @@ const Navbar = () => {
     const getCurentUserEmail = async () => {
       try {
         const { email } = await magic.user.getMetadata();
+        console.log({ email });
         if (email) {
           setUsername(email);
         }
       } catch (error) {
-        console.error("Error retrieving email", error);
+        console.error("Error retrieving email😭", error);
+        console.log("isLoggedIn", await magic.user.isLoggedIn());
       }
     };
 
@@ -39,6 +41,19 @@ const Navbar = () => {
   const handleShowDropdown = (e) => {
     e.preventDefault();
     setShowDropdown(!showDropdown);
+  };
+
+  const handleSignOut = async (e) => {
+    e.preventDefault();
+
+    try {
+      await magic.user.logout();
+      console.log("isLoggedIn", await magic.user.isLoggedIn());
+      router.push("/login");
+    } catch (error) {
+      console.error("Error logging out", error);
+      router.push("/login");
+    }
   };
 
   return (
@@ -81,9 +96,9 @@ const Navbar = () => {
             {showDropdown && (
               <div className={styles.navDropdown}>
                 <div>
-                  <Link href="/login">
-                    <a className={styles.linkName}>Sign out</a>
-                  </Link>
+                  <a className={styles.linkName} onClick={handleSignOut}>
+                    Sign out
+                  </a>
                   <div className={styles.lineWrapper}></div>
                 </div>
               </div>
