@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { magic } from "../lib/magic-client";
+import { useEffect } from "react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -11,6 +12,20 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChangeComplete = () => {
+      setIsLoading(false);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChangeComplete);
+    router.events.on("routeChangeError", handleRouteChangeComplete);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChangeComplete);
+      router.events.off("routeChangeError", handleRouteChangeComplete);
+    };
+  }, [router]);
 
   const handleOnChangeEmail = (e) => {
     setUserMsg("");
@@ -25,10 +40,10 @@ const Login = () => {
       if (email === "zowoz8819@gmail.com") {
         try {
           setIsLoading(true);
+
           const didToken = await magic.auth.loginWithMagicLink({ email });
           console.log({ didToken });
           if (didToken) {
-            setIsLoading(false);
             router.push("/");
           }
         } catch (error) {
@@ -36,11 +51,9 @@ const Login = () => {
           console.error("Something went wrong logging in", error);
         }
       } else {
-        setIsLoading(false);
         setUserMsg("Something went wrong logging in");
       }
     } else {
-      setIsLoading(false);
       setUserMsg("Enter a valid email address");
     }
   };
