@@ -6,18 +6,18 @@ import SectionCards from "../components/card/section-cards";
 import { getVideos, getPopularVideos } from "../lib/videos";
 
 export async function getServerSideProps(context) {
-  const disneyVideos = await getVideos("disney trailer");
-  const productivityVideos = await getVideos("productivity");
-  const travelVideos = await getVideos("travel");
-  const USpopularVideos = await getPopularVideos("US");
-  const KRpopularVideos = await getPopularVideos("KR");
+  // const disneyVideos = await getVideos("disney trailer");
+  // const productivityVideos = await getVideos("productivity");
+  // const travelVideos = await getVideos("travel");
+  // const USpopularVideos = await getPopularVideos("US");
+  // const KRpopularVideos = await getPopularVideos("KR");
   return {
     props: {
-      disneyVideos,
-      productivityVideos,
-      travelVideos,
-      USpopularVideos,
-      KRpopularVideos,
+      // disneyVideos,
+      // productivityVideos,
+      // travelVideos,
+      // USpopularVideos,
+      // KRpopularVideos,
     },
   };
 }
