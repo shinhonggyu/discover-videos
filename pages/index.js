@@ -40,6 +40,7 @@ const Home = ({
       <div className={styles.main}>
         <Navbar username="zowoz8819@gmail.com" />
         <Banner
+          videoId="4zH5iYM4wJo"
           title="Clifford the Big Red Dog"
           subTitle="a very cute dog"
           imgUrl="/static/clifford.webp"
