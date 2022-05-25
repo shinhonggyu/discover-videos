@@ -11,7 +11,8 @@ const Video = () => {
   const videoInfo = {
     title: "Hi cute dog",
     publishTime: "1990-01-01",
-    description: "A big red dog that is super cute, can he get any bigger?",
+    description:
+      "A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? A big red dog that is super cute, can he get any bigger? ",
     channelTitle: "Paramount Pictures",
     viewCount: 10000,
   };
@@ -39,6 +40,7 @@ const Video = () => {
         <div className={styles.modalBody}>
           <div className={styles.modalBodyContent}>
             <div className={styles.col1}>
+              <p className={styles.publishTime}>{publishTime}</p>
               <p className={styles.title}>{title}</p>
               <p className={styles.description}>{description}</p>
             </div>
