@@ -5,7 +5,11 @@ import Navbar from "../components/navbar/navbar";
 import SectionCards from "../components/card/section-cards";
 import { getVideos, getPopularVideos } from "../lib/videos";
 
+// To fetch data at request time
+// This function will be called by the server on every request
+// Only if you need to render a page whose data must be fetched at request time
 export async function getServerSideProps(context) {
+  console.log("getServerSideProps");
   // const disneyVideos = await getVideos("disney trailer");
   // const productivityVideos = await getVideos("productivity");
   // const travelVideos = await getVideos("travel");
